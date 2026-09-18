@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Figure Trends — Weekly collectible figure lists</title>
+  <title>Figure Trends | Weekly collectible figure lists</title>
   <meta name="description" content="Weekly lists of which collectible figures are heating up, selling out, or not worth the pre-order." />
   <style>
     :root {
@@ -102,52 +102,27 @@
       color: var(--lede);
       margin: 0;
     }
-    form {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+    .signup {
       margin: 28px 0 10px;
       font-family: system-ui, -apple-system, sans-serif;
     }
-    input[type="email"] {
-      flex: 1;
-      min-width: 220px;
-      padding: 13px 16px;
-      border: 1px solid rgba(255,255,255,0.8);
-      background: rgba(255,255,255,0.55);
-      color: var(--text);
-      border-radius: 14px;
-      font-size: 16px;
-      box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.9);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      outline: none;
+    .signup h2 {
+      font-size: 18px;
+      margin: 0 0 6px;
+      font-weight: 600;
+      font-family: system-ui, -apple-system, sans-serif;
+      color: #121826;
     }
-    input[type="email"]::placeholder { color: #7a8699; }
-    input[type="email"]:focus {
-      border-color: rgba(47, 111, 237, 0.45);
-      box-shadow: 0 0 0 4px rgba(47, 111, 237, 0.12), var(--shadow-sm);
-    }
-    button {
-      padding: 13px 20px;
-      border: 0;
-      border-radius: 14px;
-      background: linear-gradient(180deg, #5b8fff, var(--accent));
-      color: #fff;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 10px 24px rgba(47, 111, 237, 0.28), inset 0 1px 0 rgba(255,255,255,0.35);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 28px rgba(47, 111, 237, 0.34), inset 0 1px 0 rgba(255,255,255,0.4);
+    .signup .sub {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0 0 14px;
     }
     .fine {
       font-size: 13px;
       color: var(--muted);
       font-family: system-ui, -apple-system, sans-serif;
-      margin: 0;
+      margin: 10px 0 0;
     }
     main { padding-top: 8px; }
     h2 {
@@ -205,6 +180,22 @@
       font-size: 13px;
       color: var(--muted);
     }
+    .canada {
+      margin-top: 22px;
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 16px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .canada strong {
+      display: block;
+      color: #121826;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
     footer {
       color: var(--muted);
       font-size: 13px;
@@ -212,6 +203,8 @@
       border-top: 1px solid rgba(255,255,255,0.45);
       background: linear-gradient(0deg, rgba(255,255,255,0.28), rgba(255,255,255,0.05));
     }
+    footer p { margin: 0 0 10px; }
+    footer p:last-child { margin-bottom: 0; }
     @media (max-width: 560px) {
       header, main, footer { padding: 22px 18px; }
       header { padding-top: 32px; }
@@ -224,40 +217,43 @@
     <div class="panel">
   <header>
     <div class="eyebrow">Figure Trends</div>
-    <h1>Know what to pre-order before it sells out.</h1>
+    <h1>Know what to preorder before it sells out.</h1>
     <p class="lede">Weekly lists of which collectible figures are heating up, cooling off, or not worth the money.</p>
-    <form action="#" onsubmit="alert('Replace this form with Beehiiv or Buttondown later. For now, write emails down yourself.'); return false;">
-      <input type="email" required placeholder="Email for the weekly list" />
-      <button type="submit">Get the list</button>
-    </form>
+    <div class="signup">
+      <h2>Get the weekly Buy / Skip / Wait list before preorders close.</h2>
+      <p class="sub">One short email a week. Which figures are heating up, which to skip, and rough Canada landed cost notes. Free.</p>
+      <!-- Beehiiv subscribe embed -->
+      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="fe739e3a-6ecd-4241-859a-f4f82d74ab47"></script>
+    </div>
     <p class="fine">Free. One email a week. No store. No spam.</p>
   </header>
   <main>
+    <!-- AMAZON_TAG: replace shop links with Associates tracking ID once approved -->
     <h2>Week of 1 Sept 2026</h2>
     <p class="meta">Prices checked as ranges on 5 Sept 2026. Always confirm on AmiAmi / Good Smile / Amazon before you pay. This is not financial advice and not an official shop.</p>
     <article>
-      <div class="tag">Pre-order window closing</div>
-      <h3>Nendoroid Hinako Shimizu — Silent Hill f</h3>
-      <p>Good Smile Nendoroid #3097. Official shop bonus window was set to close mid-September 2026. Small, cheap entry if you play the new Silent Hill and want one piece on the shelf.</p>
-      <p class="verdict">Verdict: Buy if you like the game. Skip if you only buy scales. ~¥6,200–6,800 / about $40–50 plus shipping.</p>
+      <div class="tag">Preorder window closing</div>
+      <h3>Nendoroid Hinako Shimizu (Silent Hill f)</h3>
+      <p>Good Smile Nendoroid #3097. Official shop bonus window was set to close mid September 2026. Small, cheap entry if you play the new Silent Hill and want one piece on the shelf.</p>
+      <p class="verdict">Verdict: Buy if you like the game. Skip if you only buy scales. About ¥6,200 to ¥6,800 / about $40 to $50 plus shipping.</p>
     </article>
     <article>
       <div class="tag">Still circulating from summer ranks</div>
       <h3>Hololive Omaru Polka 1/7</h3>
-      <p>Showed up in AmiAmi mid-year figure ranking. VTuber scales move fast when a talent is touring or clipping well. Aftermarket usually jumps if the first run is thin.</p>
-      <p class="verdict">Verdict: Pre-order if you collect hololive. Do not chase after release unless you accept a markup.</p>
+      <p>Showed up in AmiAmi mid year figure ranking. VTuber scales move fast when a talent is touring or clipping well. Aftermarket usually jumps if the first run is thin.</p>
+      <p class="verdict">Verdict: Preorder if you collect hololive. Do not chase after release unless you accept a markup.</p>
     </article>
     <article>
       <div class="tag">Safe popular IP</div>
-      <h3>Marin Kitagawa — My Dress-Up Darling</h3>
+      <h3>Marin Kitagawa (My Dress Up Darling)</h3>
       <p>New prize and Nendoroid variants are still coming through 2026. Prize figures are cheap display pieces. Scales and Nendoroids hold value better.</p>
-      <p class="verdict">Verdict: Prize version = fun, low risk. Scale = only if this is a character you display long-term.</p>
+      <p class="verdict">Verdict: Prize version equals fun, low risk. Scale only if this is a character you display long term.</p>
     </article>
     <article>
       <div class="tag">WonFes leftover heat</div>
       <h3>Re:Zero Emilia Wedding Dress 1/7 (Design COCO)</h3>
-      <p>Revealed at Wonder Festival 2026 Summer. Wedding versions of main heroines usually pre-order well and do not sit on shelves.</p>
-      <p class="verdict">Verdict: Watch the pre-order open date. These sell on announcement, not on release.</p>
+      <p>Revealed at Wonder Festival 2026 Summer. Wedding versions of main heroines usually preorder well and do not sit on shelves.</p>
+      <p class="verdict">Verdict: Watch the preorder open date. These sell on announcement, not on release.</p>
     </article>
     <article>
       <div class="tag">Game crossover</div>
@@ -273,22 +269,26 @@
     </article>
     <article>
       <div class="tag">Wait</div>
-      <h3>Generic original-character bunny or bath scales</h3>
-      <p>These rank on raw pre-order volume and then flood the used market. Pretty sculpt, weak resale unless the artist is a name you already collect.</p>
+      <h3>Generic original character bunny or bath scales</h3>
+      <p>These rank on raw preorder volume and then flood the used market. Pretty sculpt, weak resale unless the artist is a name you already collect.</p>
       <p class="verdict">Verdict: Wait 6 months after release and look at used prices before you spend ¥20,000+.</p>
     </article>
     <article>
       <div class="tag">How to use this list</div>
       <h3>Rule for this week</h3>
-      <p>One pre-order max if you are new. Prefer a character you already watch or play. Check shipping to Canada before you click.</p>
-      <p class="verdict">Next list: same time next week. Prices and windows change. Re-check before buying.</p>
+      <p>One preorder max if you are new. Prefer a character you already watch or play. Check shipping to Canada before you click.</p>
+      <p class="verdict">Next list: same time next week. Prices and windows change. Recheck before buying.</p>
     </article>
+    <div class="canada">
+      <strong>Canada landed cost note</strong>
+      Prices on Figure Trends are shop ranges in yen / rough USD. They are not your final Canada cost. For Japan to Canada by mail, CBSA generally starts assessing tax above CAD $20. You usually owe GST or HST (and PST in some provinces). Duty on Japanese origin toys and figures is often low or zero under CPTPP when origin is declared correctly, not guaranteed. Canada Post often adds about CAD $9.95 if it collects tax. Couriers can add higher brokerage. Always recheck the shop, shipping method, and CBSA rules before you buy. This is not tax or legal advice.
+    </div>
   </main>
   <footer>
-    Figure Trends is an independent list. Not affiliated with Good Smile, AmiAmi, Kotobukiya, or any manufacturer. Affiliate links will be added after programs approve.
+    <p>Some links are affiliate links. I may earn a commission at no extra cost to you.</p>
+    <p>Figure Trends is an independent list. Not affiliated with Good Smile, AmiAmi, Kotobukiya, or any manufacturer.</p>
   </footer>
     </div>
   </div>
-  <!-- deploy trigger 2026-09-15 -->
 </body>
 </html>
