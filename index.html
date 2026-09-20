@@ -220,6 +220,31 @@
       border-bottom: 1px solid rgba(47, 111, 237, 0.35);
     }
     a.shop:hover { border-bottom-color: var(--accent); }
+
+    .disclose {
+      margin: 16px 0 0;
+      padding: 12px 14px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.75);
+      border-radius: 12px;
+    }
+    .how {
+      margin: 14px 0 0;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .how a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    .updated {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+    footer .links a { color: var(--accent); text-decoration: none; font-weight: 600; margin-right: 12px; }
   </style>
 </head>
 <body>
@@ -235,11 +260,14 @@
       <!-- Beehiiv subscribe embed -->
       <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="fe739e3a-6ecd-4241-859a-f4f82d74ab47"></script>
     </div>
-    <p class="fine">Free. One email a week. No store. No spam.</p>
+    <p class="fine">Free. One email a week. No store. No spam. <a class="shop" href="/privacy">Privacy</a></p>
+    <p class="how">How we pick: AmiAmi reservation heat plus editorial judgment, with Canada landed cost in mind. <a href="/about">About the list</a></p>
   </header>
   <main>
     <!-- Amazon Associates tag: figuretrend01-20 (amazon.ca search links) -->
+    <p class="disclose">Some links are Amazon.ca affiliate links. I may earn a commission at no extra cost to you.</p>
     <h2>Week of 15 Sept 2026</h2>
+    <p class="updated">Updated 20 Sept 2026</p>
     <p class="meta">Prices checked as ranges mid September 2026, using AmiAmi August 2026 reservation heat (freshest full monthly rank available). Always confirm on AmiAmi / Good Smile / Amazon before you pay. Add shipping to Canada before you commit. This is not financial advice and not an official shop.</p>
     <article>
       <div class="tag">Ranking heat</div>
@@ -294,6 +322,7 @@
     </div>
   </main>
   <footer>
+    <p class="links"><a href="/about">About</a><a href="/privacy">Privacy</a><a href="mailto:chauhantaarak@gmail.com">Contact</a></p>
     <p>Some links are affiliate links. I may earn a commission at no extra cost to you.</p>
     <p>Figure Trends is an independent list. Not affiliated with Good Smile, AmiAmi, Kotobukiya, or any manufacturer.</p>
   </footer>
