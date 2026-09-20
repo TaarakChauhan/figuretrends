@@ -3,310 +3,227 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Figure Trends | Weekly collectible figure lists</title>
-  <meta name="description" content="Weekly lists of which collectible figures are heating up, selling out, or not worth the preorder." />
+  <title>Figure Trends | This week’s Buy / Skip / Wait list</title>
+  <meta name="description" content="Weekly Buy / Skip / Wait shortlist for anime and game figures, with Canada landed cost in mind." />
   <style>
     :root {
-      --bg1: #eef6ff;
-      --bg2: #f7f0ff;
-      --bg3: #fff6ec;
-      --glass: rgba(255, 255, 255, 0.55);
-      --glass-strong: rgba(255, 255, 255, 0.72);
-      --glass-border: rgba(255, 255, 255, 0.75);
-      --glass-edge: rgba(120, 150, 200, 0.22);
-      --text: #1c2433;
-      --muted: #5b677a;
-      --lede: #3a465a;
-      --accent: #2f6fed;
-      --accent-soft: rgba(47, 111, 237, 0.14);
-      --shadow: 0 18px 50px rgba(70, 100, 160, 0.14);
-      --shadow-sm: 0 8px 24px rgba(70, 100, 160, 0.1);
+      --ink: #141821;
+      --muted: #5c6575;
+      --accent: #c45c26;
+      --accent2: #2a5db0;
+      --line: rgba(40, 50, 70, 0.12);
+      --shadow: 0 20px 50px rgba(40, 30, 20, 0.12);
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--text);
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      color: var(--ink);
       line-height: 1.55;
       background:
-        radial-gradient(1200px 600px at 10% -10%, #d9eaff 0%, transparent 55%),
-        radial-gradient(900px 500px at 90% 5%, #f3e2ff 0%, transparent 50%),
-        radial-gradient(800px 500px at 50% 100%, #ffe9d4 0%, transparent 45%),
-        linear-gradient(165deg, var(--bg1), var(--bg2) 45%, var(--bg3));
-      background-attachment: fixed;
+        radial-gradient(900px 500px at 0% 0%, #ffd7b8 0%, transparent 55%),
+        radial-gradient(800px 480px at 100% 10%, #c9dbff 0%, transparent 50%),
+        linear-gradient(180deg, #f7f1e8, #eef2f8 55%, #f8f0e6);
+      min-height: 100vh;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.55), transparent 35%),
-        radial-gradient(circle at 80% 20%, rgba(180,210,255,0.35), transparent 30%),
-        radial-gradient(circle at 70% 75%, rgba(255,210,180,0.25), transparent 35%);
-      z-index: 0;
-    }
-    .shell {
-      position: relative;
-      z-index: 1;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 28px 16px 48px;
-    }
-    .panel {
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      border-radius: 28px;
-      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.85);
-      backdrop-filter: blur(22px) saturate(160%);
-      -webkit-backdrop-filter: blur(22px) saturate(160%);
-      overflow: hidden;
-    }
-    header, main, footer {
-      max-width: none;
-      margin: 0;
-      padding: 28px 28px;
-    }
-    header {
-      padding-top: 44px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid rgba(255,255,255,0.45);
-      background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0.05));
-    }
-    .eyebrow {
-      display: inline-block;
-      color: var(--accent);
-      letter-spacing: 0.12em;
-      font-size: 12px;
-      text-transform: uppercase;
+    a { color: var(--accent2); }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 16px 48px; }
+    .topnav {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      background: rgba(255,250,244,0.82);
+      border-bottom: 1px solid var(--line);
+      margin: 0 -16px 18px;
+      padding: 12px 16px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
       font-family: system-ui, -apple-system, sans-serif;
-      background: var(--accent-soft);
-      border: 1px solid rgba(47, 111, 237, 0.2);
-      border-radius: 999px;
-      padding: 6px 12px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+    }
+    .brand {
+      font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+      font-size: 12px; color: var(--ink); text-decoration: none;
+    }
+    .brand span { color: var(--accent); }
+    .menu { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; }
+    .menu a { color: var(--muted); text-decoration: none; font-weight: 600; }
+    .menu a:hover, .menu a[aria-current="page"] { color: var(--ink); }
+    .hero {
+      background: rgba(255, 252, 247, 0.78);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 28px 26px 22px;
+      margin-bottom: 18px;
+    }
+    .kicker {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--accent); margin: 0 0 8px;
     }
     h1 {
-      font-size: clamp(32px, 6vw, 44px);
-      line-height: 1.1;
-      margin: 16px 0 14px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      color: #121826;
+      font-size: clamp(30px, 6vw, 44px); line-height: 1.08;
+      margin: 0 0 10px; font-weight: 600; letter-spacing: -0.02em;
     }
-    .lede {
-      font-size: 20px;
-      color: var(--lede);
-      margin: 0;
-    }
+    .lede { font-size: 18px; color: #3a4250; margin: 0 0 16px; max-width: 36em; }
     .signup {
-      margin: 28px 0 10px;
       font-family: system-ui, -apple-system, sans-serif;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 14px 10px;
     }
-    .signup h2 {
-      font-size: 18px;
-      margin: 0 0 6px;
-      font-weight: 600;
+    .signup strong { display: block; font-size: 14px; margin-bottom: 4px; }
+    .signup .sub { font-size: 13px; color: var(--muted); margin: 0 0 10px; }
+    .fine { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; color: var(--muted); margin: 10px 0 0; }
+    .disclose {
       font-family: system-ui, -apple-system, sans-serif;
-      color: #121826;
+      font-size: 12px; color: var(--muted);
+      margin: 0 0 16px; padding: 10px 12px;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid var(--line);
+      border-radius: 12px;
     }
-    .signup .sub {
-      font-size: 14px;
-      color: var(--muted);
-      margin: 0 0 14px;
+    .weekhead {
+      display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+      gap: 8px; margin: 8px 0 6px;
     }
-    .fine {
-      font-size: 13px;
-      color: var(--muted);
+    .weekhead h2 { font-size: clamp(24px, 4vw, 30px); margin: 0; font-weight: 600; }
+    .updated {
       font-family: system-ui, -apple-system, sans-serif;
-      margin: 10px 0 0;
-    }
-    main { padding-top: 8px; }
-    h2 {
-      font-size: 28px;
-      margin: 28px 0 8px;
-      font-weight: 500;
-      color: #121826;
+      font-size: 12px; color: var(--muted); font-weight: 600;
     }
     .meta {
-      color: var(--muted);
       font-family: system-ui, -apple-system, sans-serif;
-      font-size: 13px;
-      margin-bottom: 22px;
+      font-size: 13px; color: var(--muted); margin: 0 0 18px;
     }
     article {
-      background: var(--glass-strong);
-      border: 1px solid var(--glass-border);
+      background: rgba(255,252,247,0.78);
+      border: 1px solid rgba(255,255,255,0.8);
       border-radius: 18px;
-      padding: 18px 18px 14px;
-      margin: 0 0 14px;
-      box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.9);
-      backdrop-filter: blur(18px) saturate(150%);
-      -webkit-backdrop-filter: blur(18px) saturate(150%);
-      position: relative;
-    }
-    article::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      pointer-events: none;
-      box-shadow: inset 0 0 0 1px var(--glass-edge);
-    }
-    article h3 {
-      margin: 0 0 6px;
-      font-size: 20px;
-      font-weight: 500;
-      color: #121826;
+      padding: 16px 16px 12px;
+      margin: 0 0 12px;
+      box-shadow: 0 8px 24px rgba(40,30,20,0.06);
     }
     .tag {
       font-family: system-ui, -apple-system, sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent);
-      display: inline-block;
-      margin-bottom: 4px;
+      font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--accent2); font-weight: 700; margin-bottom: 4px;
     }
-    article p {
-      margin: 8px 0;
-      color: #334155;
-    }
-    .verdict {
-      font-family: system-ui, -apple-system, sans-serif;
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .canada {
-      margin-top: 22px;
-      padding: 16px 18px;
-      background: rgba(255,255,255,0.45);
-      border: 1px solid rgba(255,255,255,0.7);
-      border-radius: 16px;
-      font-family: system-ui, -apple-system, sans-serif;
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .canada strong {
-      display: block;
-      color: #121826;
-      margin-bottom: 6px;
-      font-size: 14px;
-    }
-    footer {
-      color: var(--muted);
-      font-size: 13px;
-      font-family: system-ui, -apple-system, sans-serif;
-      border-top: 1px solid rgba(255,255,255,0.45);
-      background: linear-gradient(0deg, rgba(255,255,255,0.28), rgba(255,255,255,0.05));
-    }
-    footer p { margin: 0 0 10px; }
-    footer p:last-child { margin-bottom: 0; }
-    @media (max-width: 560px) {
-      header, main, footer { padding: 22px 18px; }
-      header { padding-top: 32px; }
-      .panel { border-radius: 22px; }
-    }
-
+    article h3 { margin: 0 0 6px; font-size: 19px; font-weight: 600; }
+    article p { margin: 8px 0; color: #2d3542; }
+    .verdict { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; color: var(--muted); }
     a.shop {
       font-family: system-ui, -apple-system, sans-serif;
-      font-size: 13px;
-      color: var(--accent);
-      font-weight: 600;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(47, 111, 237, 0.35);
+      font-size: 13px; color: var(--accent2); font-weight: 700;
+      text-decoration: none; border-bottom: 1px solid rgba(42,93,176,0.35);
     }
-    a.shop:hover { border-bottom-color: var(--accent); }
-    .affnote {
-      display: block;
-      margin-top: 4px;
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 400;
+    .affnote { display: block; margin-top: 4px; font-size: 12px; color: var(--muted); font-weight: 400; }
+    .canada {
+      margin-top: 16px; padding: 14px 16px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 13px; color: var(--muted);
+      background: rgba(255,255,255,0.5); border: 1px solid var(--line); border-radius: 14px;
+    }
+    .canada summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+    .canada[open] summary { margin-bottom: 8px; }
+    footer {
+      margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--line);
+      font-family: system-ui, -apple-system, sans-serif; font-size: 13px; color: var(--muted);
+    }
+    footer .links { margin-bottom: 10px; }
+    footer .links a { color: var(--accent2); text-decoration: none; font-weight: 700; margin-right: 12px; }
+    footer p { margin: 0 0 8px; }
+    @media (max-width: 560px) {
+      .hero { padding: 22px 18px 16px; border-radius: 20px; }
     }
   </style>
 </head>
 <body>
-  <div class="shell">
-    <div class="panel">
-  <header>
-    <div class="eyebrow">Figure Trends</div>
-    <h1>Know what to preorder before it sells out.</h1>
-    <p class="lede">Weekly lists of which collectible figures are heating up, cooling off, or not worth the money.</p>
-    <div class="signup">
-      <h2>Get the weekly Buy / Skip / Wait list before preorders close.</h2>
-      <p class="sub">One short email a week. Which figures are heating up, which to skip, and rough Canada landed cost notes. Free.</p>
-      <!-- Beehiiv subscribe embed -->
-      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="fe739e3a-6ecd-4241-859a-f4f82d74ab47"></script>
-    </div>
-    <p class="fine">Free. One email a week. No store. No spam.</p>
-  </header>
-  <main>
-    <!-- Amazon Associates tag: figuretrend01-20 (amazon.ca search links) -->
+  <div class="wrap">
+    <nav class="topnav" aria-label="Primary">
+      <a class="brand" href="/">Figure <span>Trends</span></a>
+      <div class="menu">
+        <a href="/" aria-current="page">This week</a>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+        <a href="mailto:chauhantaarak@gmail.com">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <p class="kicker">Collector shortlist · Canada aware</p>
+      <h1>What to preorder this week. What to skip.</h1>
+      <p class="lede">A short Buy / Skip / Wait list for anime and game figures. Not a shop. Not a ranking dump.</p>
+      <div class="signup" id="signup">
+        <strong>Get the list by email</strong>
+        <p class="sub">One short note a week when the list updates. Free. <a href="/privacy">Privacy</a></p>
+        <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="fe739e3a-6ecd-4241-859a-f4f82d74ab47"></script>
+      </div>
+      <p class="fine">Method and disclaimers live under <a href="/about">About</a>. Long Canada tax notes sit under the list.</p>
+    </section>
+
     <p class="disclose">As an Amazon Associate I earn from qualifying purchases. Some links are Amazon.ca affiliate links. I may earn a commission at no extra cost to you.</p>
-    <h2>Week of 15 Sept 2026</h2>
-    <p class="meta">Prices checked as ranges mid September 2026, using AmiAmi August 2026 reservation heat (freshest full monthly rank available). Always confirm on AmiAmi / Good Smile / Amazon before you pay. Add shipping to Canada before you commit. This is not financial advice and not an official shop.</p>
-    <article>
+
+    <main id="this-week">
+      <!-- Amazon Associates tag: figuretrend01-20 (amazon.ca search links) -->
+      <div class="weekhead">
+        <h2>Week of 15 Sept 2026</h2>
+        <p class="updated">Updated 20 Sept 2026</p>
+      </div>
+      <p class="meta">Prices checked as ranges mid September 2026, using AmiAmi August 2026 reservation heat (freshest full monthly rank available). Always confirm on AmiAmi / Good Smile / Amazon before you pay. This is not financial advice and not an official shop.</p>
+<article>
       <div class="tag">Ranking heat</div>
       <h3>Berserker / Morgan Final Ascension Ver. (Fate/Grand Order, Alter 1/7)</h3>
       <p>Topped AmiAmi August 2026 figure reservation ranking. Final Ascension looks sell on announcement for FGO collectors. Listed around ¥48,180 tax in, with a late 2027 release window.</p>
       <p class="verdict">Verdict: Buy if you whale FGO and this is your servant. Skip if you only dip into Fate merch. Wait if you need the Canada landed total first (figure + EMS/DHL + tax).</p>
       <p class="verdict"><a class="shop" href="https://www.amazon.ca/s?k=Fate+Grand+Order+Morgan+figure&tag=figuretrend01-20" rel="nofollow sponsored" target="_blank">Check Amazon.ca for FGO Morgan figures</a> <span class="affnote">Affiliate link. I may earn a commission.</span></p>
-    </article>
-    <article>
+    </article><article>
       <div class="tag">Game crossover</div>
       <h3>Sparkle (Honkai: Star Rail, Alter 1/7)</h3>
       <p>HSR scales moved fast in the August ranks (Sparkle near the top of the board). Character popularity on your account usually matters more than “it looks cool.”</p>
       <p class="verdict">Verdict: Buy if Sparkle is a main on your account. Skip random HSR scales. Wait for price checks on AmiAmi vs Amazon.ca before locking a preorder.</p>
       <p class="verdict"><a class="shop" href="https://www.amazon.ca/s?k=Honkai+Star+Rail+Sparkle+figure&tag=figuretrend01-20" rel="nofollow sponsored" target="_blank">Check Amazon.ca for Sparkle figures</a> <span class="affnote">Affiliate link. I may earn a commission.</span></p>
-    </article>
-    <article>
+    </article><article>
       <div class="tag">Nostalgia reissue</div>
       <h3>Son Goku and Bulma (Dragon Ball Desktop Real McCoy 06, MegaHouse limited reissue)</h3>
       <p>Mid pack on August ranks. Nostalgia bike piece, not a modern prize flood. Reissues can sit or spike depending on how many hit the used market.</p>
       <p class="verdict">Verdict: Buy if you collect MegaHouse Desktop Real McCoy or classic Dragon Ball. Skip if you only buy modern 1/7 scales. Wait a few weeks after open if you are price sensitive.</p>
       <p class="verdict"><a class="shop" href="https://www.amazon.ca/s?k=Goku+Bulma+Desktop+Real+McCoy&tag=figuretrend01-20" rel="nofollow sponsored" target="_blank">Check Amazon.ca for Goku and Bulma figures</a> <span class="affnote">Affiliate link. I may earn a commission.</span></p>
-    </article>
-    <article>
+    </article><article>
       <div class="tag">Figma / summer</div>
       <h3>Anis Sparkling Summer Ver. (Goddess of Victory: NIKKE, Max Factory figma)</h3>
       <p>NIKKE keeps converting players into merch. Figmas are cheaper than full scales and easier to ship, but still add up with Canada shipping.</p>
       <p class="verdict">Verdict: Buy if Anis is your main. Skip “complete the NIKKE shelf” unless budget is open. Wait if you already have a summer Anis variant.</p>
       <p class="verdict"><a class="shop" href="https://www.amazon.ca/s?k=NIKKE+Anis+figma&tag=figuretrend01-20" rel="nofollow sponsored" target="_blank">Check Amazon.ca for Anis / NIKKE figmas</a> <span class="affnote">Affiliate link. I may earn a commission.</span></p>
-    </article>
-    <article>
+    </article><article>
       <div class="tag">Expensive niche IP</div>
       <h3>Enagi Himi (Limelight Lemonade Jam, AliceGlint 1/3.5)</h3>
       <p>Huge scale and high price band. Ranked from raw preorder heat, not from casual collectors. Easy to regret if you do not know the IP.</p>
       <p class="verdict">Verdict: Buy only if you already love the game and character. Skip as a “rank #2 so I should” purchase. Wait and watch aftermarket unless this is already a grail. Price the Canada landed cost before you click.</p>
       <p class="verdict"><a class="shop" href="https://www.amazon.ca/s?k=Limelight+Lemonade+Jam+figure&tag=figuretrend01-20" rel="nofollow sponsored" target="_blank">Check Amazon.ca for Limelight Lemonade Jam figures</a> <span class="affnote">Affiliate link. I may earn a commission.</span></p>
-    </article>
-    <article>
+    </article><article>
       <div class="tag">Wait</div>
       <h3>High volume original character or bunny style scales in the current rank noise</h3>
       <p>August ranks still mix strong IP with original character flood. Those often preorder hard, then soften on the used market.</p>
       <p class="verdict">Verdict: Wait 6 months after release and check used prices before spending ¥20,000+. Prefer named game or anime IP unless the sculptor is already on your shelf.</p>
-    </article>
-    <article>
+    </article><article>
       <div class="tag">How to use this list</div>
       <h3>Rule for this week</h3>
       <p>One preorder max if you are new. Prefer a character you already play or watch. Before checkout, write down figure price + shipping to Canada + possible duty so the “deal” is the landed cost.</p>
       <p class="verdict">Next list same time next week. Windows move. Recheck before you pay.</p>
     </article>
-    <div class="canada">
-      <strong>Canada landed cost note</strong>
-      Prices on Figure Trends are shop ranges in yen / rough USD. They are not your final Canada cost. For Japan to Canada by mail, CBSA generally starts assessing tax above CAD $20. You usually owe GST or HST (and PST in some provinces). Duty on Japanese origin toys and figures is often low or zero under CPTPP when origin is declared correctly, not guaranteed. Canada Post often adds about CAD $9.95 if it collects tax. Couriers can add higher brokerage. Always recheck the shop, shipping method, and CBSA rules before you buy. This is not tax or legal advice.
-    </div>
-  </main>
-  <footer>
-    <p>As an Amazon Associate I earn from qualifying purchases.</p>
-    <p>Some links are affiliate links. I may earn a commission at no extra cost to you.</p>
-    <p>Figure Trends is an independent list. Not affiliated with Good Smile, AmiAmi, Kotobukiya, or any manufacturer.</p>
-  </footer>
-    </div>
+      <details class="canada">
+        <summary>Canada landed cost note (tap to expand)</summary>
+        Prices on Figure Trends are shop ranges in yen / rough USD. They are not your final Canada cost. For Japan to Canada by mail, CBSA generally starts assessing tax above CAD $20. You usually owe GST or HST (and PST in some provinces). Duty on Japanese origin toys and figures is often low or zero under CPTPP when origin is declared correctly, not guaranteed. Canada Post often adds about CAD $9.95 if it collects tax. Couriers can add higher brokerage. Always recheck the shop, shipping method, and CBSA rules before you buy. This is not tax or legal advice.
+      </details>
+    </main>
+
+    <footer>
+      <p class="links"><a href="/">This week</a><a href="/about">About</a><a href="/privacy">Privacy</a><a href="mailto:chauhantaarak@gmail.com">Contact</a></p>
+      <p>As an Amazon Associate I earn from qualifying purchases.</p>
+      <p>Some links are affiliate links. I may earn a commission at no extra cost to you.</p>
+      <p>Figure Trends is an independent list. Not affiliated with Good Smile, AmiAmi, Kotobukiya, or any manufacturer.</p>
+    </footer>
   </div>
 </body>
 </html>
