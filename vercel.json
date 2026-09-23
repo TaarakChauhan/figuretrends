@@ -1,3 +1,17 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "figuretrends.com" }],
+      "destination": "https://www.figuretrends.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "figuretrends.vercel.app" }],
+      "destination": "https://www.figuretrends.com/:path*",
+      "permanent": true
+    }
+  ]
 }
